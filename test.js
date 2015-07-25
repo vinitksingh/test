@@ -1,18 +1,16 @@
 const Browser = require('zombie');
 
-describe('User visits signup page', function() {
+describe('User visits Hello World page', function() {
 
   const browser = new Browser();
 
   before(function(done) {
-    browser.visit('https://google.com/', done);
+    browser.visit('http://104.199.128.78:8081/Tryout/', done);
   });
 
   describe('submits form', function() {
 
     before(function(done) {
-      browser
-        .fill('q', 'Search Term');
         // Don't submit anything yet - for now
         done();
     });
@@ -21,8 +19,8 @@ describe('User visits signup page', function() {
       browser.assert.success();
     });
 
-    it('should see search page', function() {
-      browser.assert.text('title', 'Google');
+    it('should see Hello World', function() {
+      browser.assert.text('h2', 'Hello World');
     });
   });
 });
